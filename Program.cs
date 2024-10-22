@@ -57,3 +57,21 @@ foreach(var obj in characters.Where(c => c.YearCreated == 1981).Select(c => new 
 
 //[1.19c] How many character(s) were created in 1981 (Mario series)? 
 Console.WriteLine($"How many? {marios.Count(c => c.YearCreated == 1981)}");
+
+//[1.19d] List the character(s) created in that 1981 (Mario series) - return character name only. 
+foreach(var obj in marios.Where(c => c.YearCreated == 1981).Select(c => new { c.Name}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name}");
+}
+
+//[1.19e] How many character(s) were created in 1981 (Donkey Kong series)? 
+Console.WriteLine($"How many? {dks.Count(c => c.YearCreated == 1981)}");
+
+//[1.19f] List the character(s) created in that 1981 (Donkey Kong series) - return character name only.
+foreach(var obj in marios.Where(c => c.YearCreated == 1981).Select(c => new { c.Name}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name}");
+}
+
+
+
