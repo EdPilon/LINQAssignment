@@ -55,16 +55,16 @@ foreach(var obj in characters.Where(c => c.YearCreated == 1981).Select(c => new 
     Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Series)}");
 }
 
-//[1.19c] How many character(s) were created in 1981 (Mario series)? 
+//[1.19c] How many character(s) were created in 1981 (Mario series)?
 Console.WriteLine($"How many? {marios.Count(c => c.YearCreated == 1981)}");
 
-//[1.19d] List the character(s) created in that 1981 (Mario series) - return character name only. 
+//[1.19d] List the character(s) created in that 1981 (Mario series) - return character name only.
 foreach(var obj in marios.Where(c => c.YearCreated == 1981).Select(c => new { c.Name}).OrderBy(c => c.Name))
 {
     Console.WriteLine($"{obj.Name}");
 }
 
-//[1.19e] How many character(s) were created in 1981 (Donkey Kong series)? 
+//[1.19e] How many character(s) were created in 1981 (Donkey Kong series)?
 Console.WriteLine($"How many? {dks.Count(c => c.YearCreated == 1981)}");
 
 //[1.19f] List the character(s) created in that 1981 (Donkey Kong series) - return character name only.
@@ -73,5 +73,11 @@ foreach(var obj in marios.Where(c => c.YearCreated == 1981).Select(c => new { c.
     Console.WriteLine($"{obj.Name}");
 }
 
+//[1.20a] How many character(s) made their first appearance in Donkey Kong 64
+Console.WriteLine($"How many? {dks.Count(c => c.FirstAppearance == "Donkey Kong 64")}");
 
-
+//[1.20b] List the character(s) that made their first appearance in Donkey Kong 64 - return character name only.
+foreach(var obj in dks.Where(c => c.FirstAppearance == "Donkey Kong 64").Select(c => new { c.Name}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name}");
+}
