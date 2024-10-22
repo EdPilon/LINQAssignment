@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LINQAssignment")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d1feb3eeb56b29afe916dc1c2d6fae0fd017ef5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c176301744996d851ef00cb749e0d98aff94eb77")]
 [assembly: System.Reflection.AssemblyProductAttribute("LINQAssignment")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LINQAssignment")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

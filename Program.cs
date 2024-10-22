@@ -81,3 +81,37 @@ foreach(var obj in dks.Where(c => c.FirstAppearance == "Donkey Kong 64").Select(
 {
     Console.WriteLine($"{obj.Name}");
 }
+
+// [1.21a] Are there any character(s) with no alias (all series)?
+bool CharacterNoAlias = characters.Any(c => c.Alias.Count == 0);
+Console.WriteLine($"Are there characters that have no alias? {CharacterNoAlias}");
+// [1.21b] How many character(s) with no alias (all series)?
+Console.WriteLine($"How many? {characters.Count(c => c.Alias.Count == 0)}");
+// [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
+foreach(var obj in characters.Where(c => c.Alias.Count == 0).Select(c => new { c.Name, c.Series}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Series)}");
+}
+
+
+// [1.21a] Are there any character(s) with no alias (all series)?
+bool MarioNoAlias = marios.Any(c => c.Alias.Count == 0);
+Console.WriteLine($"Are there characters that have no alias? {MarioNoAlias}");
+// [1.21b] How many character(s) with no alias (all series)?
+Console.WriteLine($"How many? {marios.Count(c => c.Alias.Count == 0)}");
+// [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
+foreach(var obj in marios.Where(c => c.Alias.Count == 0).Select(c => new { c.Name, c.Series}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Series)}");
+}
+
+// [1.21a] Are there any character(s) with no alias (all series)?
+bool DKNoAlias = dks.Any(c => c.Alias.Count == 0);
+Console.WriteLine($"Are there characters that have no alias? {DKNoAlias}");
+// [1.21b] How many character(s) with no alias (all series)?
+Console.WriteLine($"How many? {dks.Count(c => c.Alias.Count == 0)}");
+// [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
+foreach(var obj in dks.Where(c => c.Alias.Count == 0).Select(c => new { c.Name, c.Series}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Series)}");
+}
