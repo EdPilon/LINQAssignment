@@ -94,24 +94,90 @@ foreach(var obj in characters.Where(c => c.Alias.Count == 0).Select(c => new { c
 }
 
 
-// [1.21a] Are there any character(s) with no alias (all series)?
+// [1.21d] Are there any character(s) with no alias (Mario series)?
 bool MarioNoAlias = marios.Any(c => c.Alias.Count == 0);
 Console.WriteLine($"Are there characters that have no alias? {MarioNoAlias}");
-// [1.21b] How many character(s) with no alias (all series)?
+// [1.21e] How many character(s) with no alias (Mario series)?
 Console.WriteLine($"How many? {marios.Count(c => c.Alias.Count == 0)}");
-// [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
+// [1.21f] List the character(s) with no alias (Mario series) - return character name and alias only.
 foreach(var obj in marios.Where(c => c.Alias.Count == 0).Select(c => new { c.Name, c.Series}).OrderBy(c => c.Name))
 {
     Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Series)}");
 }
 
-// [1.21a] Are there any character(s) with no alias (all series)?
+// [1.21g] Are there any character(s) with no alias (Donkey Kong series)?
 bool DKNoAlias = dks.Any(c => c.Alias.Count == 0);
 Console.WriteLine($"Are there characters that have no alias? {DKNoAlias}");
-// [1.21b] How many character(s) with no alias (all series)?
+// [1.21h] How many character(s) with no alias (Donkey Kong series)?
 Console.WriteLine($"How many? {dks.Count(c => c.Alias.Count == 0)}");
-// [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
+// [1.21i] List the character(s) with no alias (Donkey Kong series) - return character name and alias only.
 foreach(var obj in dks.Where(c => c.Alias.Count == 0).Select(c => new { c.Name, c.Series}).OrderBy(c => c.Name))
 {
     Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Series)}");
 }
+
+//[1.22a] Do any character(s) have an alias of Snowmad King (return type must be boolean)?
+bool Snowmad = characters.Any(c => c.Alias.Any(alias => alias == "Snowmad King"));
+Console.WriteLine($"Are there characters that have 'Snowmad King' as an alias? {Snowmad}");
+//[1.22b] List the character(s) that have an alias of Snowmad King - return character name and alias only.
+foreach(var obj in characters.Where(c => c.Alias.Any(alias => alias == "Snowmad King")).Select(c => new { c.Name, c.Alias}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Alias)}");
+}
+
+//[1.23a] Do any character(s) that have an alias of Winter Kong (return type must be boolean)?
+bool Winter = characters.Any(c => c.Alias.Any(alias => alias == "Winter Kong"));
+Console.WriteLine($"Are there characters that have 'Winter Kong' as an alias? {Winter}");
+//[1.23b] List the character(s) that have an alias of Winter Kong - return character name and alias only.
+foreach(var obj in characters.Where(c => c.Alias.Any(alias => alias == "Winter Kong")).Select(c => new { c.Name, c.Alias}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Alias)}");
+}
+
+//[1.24a] How many character(s) have a species of Kremling?
+int Kremling = characters.Count(c => c.Species == "Kremling");
+Console.WriteLine($"How many characters are Kremling? {Kremling}");
+//[1.24b] List the character(s) that have a species of Kremling - return character name only.
+foreach(var obj in characters.Where(c => c.Species == "Kremling").Select(c => new { c.Name}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name}");
+}
+
+//[1.25a] How many character(s) in the Mario series are Human species?
+bool Human = marios.Any(c => c.Species == "Human");
+Console.WriteLine($"Are there characters that are Human? {Human}");
+//[1.25b] List the character(s) in the Mario series that are Human species - return character name only.
+foreach(var obj in marios.Where(c => c.Species == "Human").Select(c => new { c.Name}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name}");
+}
+
+//[1.25c] How many character(s) in the Mario series are Koopa species?
+bool Koopa = marios.Any(c => c.Species == "Koopa");
+Console.WriteLine($"Are there characters that are Koopa? {Koopa}");
+//[1.25d] List the character(s) in the Mario series that are Koopa species - return character name only.
+foreach(var obj in marios.Where(c => c.Species == "Koopa").Select(c => new { c.Name}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name}");
+}
+
+//[1.25e] How many character(s) in the Mario series are something other than Human or Koopa species?
+int Kouman = characters.Count(c => (c.Species != "Human") && (c.Species != "Koopa"));
+Console.WriteLine($"How many characters are not human or koopa? {Kouman}");
+//[1.25f] List the character(s) in the Mario series that are something other than Human or Koopa species - return character name and species only.
+foreach(var obj in marios.Where(c => (c.Species != "Human") && (c.Species != "Koopa")).Select(c => new { c.Name, c.Species}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Species)}");
+}
+//[1.26] List the character(s) in the Donkey Kong series that are something other than Human or Kong species - return character name and species only?
+foreach(var obj in dks.Where(c => (c.Species != "Human") && (c.Species != "Kong")).Select(c => new { c.Name, c.Species}).OrderBy(c => c.Name))
+{
+    Console.WriteLine($"{obj.Name} - {string.Join(", ", obj.Species)}");
+}
+
+
+
+
+
+
+
